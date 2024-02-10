@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS can be added here */
+        
+        button {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            filter: brightness(110%);
+        }
+
+        /* Accordion Styles */
+        .accordion-header {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-body {
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px; /* Adjust container padding for smaller screens */
+            }
+
+            .grid {
+                grid-template-columns: 1fr; /* Stack grid items vertically on smaller screens */
+            }
+
+            .border {
+                border-width: 0; /* Remove borders on smaller screens */
+            }
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Left Section (Carousel) -->
+            <div class="border rounded-lg overflow-hidden">
+                <!-- Placeholder for Carousel Images -->
+                <img src="//www.graza.co/cdn/shop/files/graza-pdp-duo-header-3_2x_caa7f912-38b3-4e36-b928-ed6c036abfc7_720x.jpg?v=1698551972" srcset="//www.graza.co/cdn/shop/files/graza-pdp-duo-header-3_2x_caa7f912-38b3-4e36-b928-ed6c036abfc7_1440x.jpg?v=1698551972 2x" alt="“Drizzle” &amp; “Sizzle”" class="aspect-child" width="768" height="800" loading="lazy">
+            </div>
+            
+            <!-- Right Section -->
+            <div class="p-4">
+                <!-- Title -->
+                <h1 class="text-2xl font-bold mb-4">“Drizzle” & “Sizzle”
+                    <br>Extra Virgin Olive Oil</h1>
+                
+                <!-- Quantity Selector -->
+                <div class="flex items-center mb-4">
+                    <label for="quantity" class="mr-2">Quantity:</label>
+                    <select id="quantity" class="border p-1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                
+                <!-- Buttons -->
+                <div class="mb-4">
+                    <button class="bg-blue-500 text-white py-2 px-4 mr-2">Add to Cart</button>
+                    <button class="bg-green-500 text-white py-2 px-4">Buy Now</button>
+                </div>
+                
+                <!-- Accordion -->
+                <div class="accordion">
+                    <!-- Description -->
+                    <div class="border rounded-lg mb-4">
+                        <div class="accordion-header bg-gray-200 py-2 px-4 cursor-pointer">Description</div>
+                        <div class="accordion-body hidden p-4">Product Description goes here.</div>
+                    </div>
+                    <!-- Harvest -->
+                    <div class="border rounded-lg mb-4">
+                        <div class="accordion-header bg-gray-200 py-2 px-4 cursor-pointer">Harvest</div>
+                        <div class="accordion-body hidden p-4">Harvest information goes here.</div>
+                    </div>
+                    <!-- Use Case -->
+                    <div class="border rounded-lg">
+                        <div class="accordion-header bg-gray-200 py-2 px-4 cursor-pointer">Use Case</div>
+                        <div class="accordion-body hidden p-4">Use Case details go here.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <!-- JavaScript for Accordion -->
+    <script>
+        // JavaScript for Accordion
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const body = header.nextElementSibling;
+                body.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
